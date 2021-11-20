@@ -101,7 +101,7 @@ export default function Home() {
                 <ListItem>
                   <Typography>
                     <DoneIcon />
-                    minutes
+                    Very fair price ranges
                   </Typography>
                 </ListItem>
                 <ListItem>
