@@ -9,7 +9,6 @@ handler.get(async (req, res) => {
   await db.connect();
   await Example.deleteMany();
   await Example.insertMany(data.example);
-
   await db.disconnect();
   res.send({ message: 'seed success' });
 });
