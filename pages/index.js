@@ -13,7 +13,7 @@ import Image from 'next/image';
 import Layout from '../components/Layout';
 import NextLink from 'next/link';
 import useStyles from '../utils/styles';
-
+import DoneIcon from '@mui/icons-material/Done';
 import { useRouter } from 'next/router';
 import { useContext } from 'react';
 import { Store } from '../utils/Store';
@@ -37,42 +37,42 @@ export default function Home() {
             Land your dream job with the perfect resume <br></br> employers are
             looking for!
           </h1>
-          <p>
+          <p className={classes.para}>
             Forget about mass applications and start being chased by recruiters.
           </p>
           <div>
             {userInfo ? (
               <>
-                <Typography component="h3" variant="h3">
-                  Hi!..<strong>{userInfo.name}</strong>
+                <Typography align="center">
+                  Hi!..<strong>{userInfo.name}</strong>. Let's GO..
                 </Typography>
               </>
             ) : (
-              <>
+              <div align="center">
                 <Button
                   fullWidth
                   type="button"
                   variant="contained"
                   color="primary"
-                  onClick={getStartHandler}
                   className={classes.button}
+                  onClick={getStartHandler}
                 >
                   Get Started
                 </Button>
-              </>
+              </div>
             )}
           </div>
         </Grid>
       </div>
       <div>
-        <div>
+        <div className={classes.helps}>
           <Grid container spacing={0}>
             <Grid item md={6} xs="none">
               <Image
-                src="/images/back.jpg"
+                src="/images/side2.jpg"
                 alt="background image"
                 width="100%"
-                height="60"
+                height="100%"
                 layout="responsive"
               ></Image>
             </Grid>
@@ -83,19 +83,58 @@ export default function Home() {
               <List>
                 <ListItem>
                   <Typography>
-                    Professional resume templates with basic, modern, and
-                    creative styles
+                    <DoneIcon /> Professional resume templates with basic,
+                    modern, and creative styles
                   </Typography>
                 </ListItem>
                 <ListItem>
-                  <Typography>Example resume in many fields</Typography>
-                </ListItem>
-                <ListItem>
-                  <Typography>Guidlines to write a prefect resume</Typography>
+                  <Typography>
+                    <DoneIcon /> Example resumes in many fields
+                  </Typography>
                 </ListItem>
                 <ListItem>
                   <Typography>
-                    The ability to download your resume for free in minutes
+                    <DoneIcon /> Free downdoadable resume examples to get ideas
+                    for you
+                  </Typography>
+                </ListItem>
+                <ListItem>
+                  <Typography>
+                    <DoneIcon />
+                    minutes
+                  </Typography>
+                </ListItem>
+                <ListItem>
+                  <Typography>
+                    <DoneIcon /> Professional resume templates with basic,
+                    modern, and creative styles
+                  </Typography>
+                </ListItem>
+                <ListItem>
+                  <Typography>
+                    <DoneIcon /> Example resume in many fields
+                  </Typography>
+                </ListItem>
+                <ListItem>
+                  <Typography>
+                    <DoneIcon /> Guidlines to write a prefect resume
+                  </Typography>
+                </ListItem>
+                <ListItem>
+                  <Typography>
+                    <DoneIcon /> The ability to download your resume for free in
+                    minutes
+                  </Typography>
+                </ListItem>
+                <ListItem>
+                  <Typography>
+                    <DoneIcon /> Guidlines to write a prefect resume
+                  </Typography>
+                </ListItem>
+                <ListItem>
+                  <Typography>
+                    <DoneIcon /> The ability to download your resume for free in
+                    minutes
                   </Typography>
                 </ListItem>
               </List>

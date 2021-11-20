@@ -100,8 +100,8 @@ function Select({ params }) {
                 <ListItem>
                   Status:{' '}
                   {isDownloaded
-                    ? `delivered at ${downloadedAt}`
-                    : 'not delivered'}
+                    ? `download at ${downloadedAt}`
+                    : 'not download'}
                 </ListItem>
               </List>
             </Card>

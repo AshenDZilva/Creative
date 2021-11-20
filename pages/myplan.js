@@ -14,6 +14,7 @@ import {
   List,
 } from '@material-ui/core';
 import React, { useContext } from 'react';
+import DeleteIcon from '@mui/icons-material/Delete';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Layout from '../components/Layout';
@@ -87,7 +88,7 @@ function MyplanScreen() {
                           color="secondary"
                           onClick={() => removeItemHandler(item)}
                         >
-                          x
+                          <DeleteIcon />
                         </Button>
                       </TableCell>
                     </TableRow>

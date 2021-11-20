@@ -15,14 +15,11 @@ import {
   Menu,
   MenuItem,
   createTheme,
-  Tabs,
-  Tab,
 } from '@material-ui/core';
 import useStyles from '../utils/styles';
 import { Store } from '../utils/Store';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/router';
-import { Box } from '@mui/system';
 
 export default function Layout({ title, description, children }) {
   const router = useRouter();
@@ -113,30 +110,14 @@ export default function Layout({ title, description, children }) {
           <Toolbar>
             <NextLink href="/" passHref>
               <Link>
-                <Typography className={classes.brand} item xs={4}>
+                <Typography className={classes.brand} item xs={2}>
                   CreatiVe
                 </Typography>
               </Link>
             </NextLink>
-            <Box item xs={4}>
-              <Tabs
-                onClick={handleChange}
-                textColor="#ffffff"
-                indicatorColor="secondary"
-                aria-label="secondary tabs example"
-              >
-                <Tab
-                  label="Resume Examples"
-                  onClick={(e) => handleChange(e, '/example')}
-                />
-                <Tab
-                  label="Resume Templates"
-                  onClick={(e) => handleChange(e, '/product')}
-                />
-              </Tabs>
-            </Box>
+
             <div className={classes.grow}></div>
-            <div item xs={4}>
+            <div>
               <Switch
                 checked={darkMode}
                 onChange={darkModeChangeHandler}
@@ -193,7 +174,18 @@ export default function Layout({ title, description, children }) {
         </AppBar>
         <Container className={classes.main}>{children}</Container>
         <footer className={classes.footer}>
-          <Typography>All Rights Resived.CreatiVe</Typography>
+          <div>
+            <h3 align="center" className={classes.navbarButton}>
+              Don’t let an outdated resume hold you back from getting the job
+              you want. Try our state-of-the-art now and make get a perfect
+              resume that perfectly highlights your talents and lands you more
+              interviews.{' '}
+            </h3>
+          </div>
+          <hr></hr>
+          <Typography>
+            <span>&copy;</span>.2021,CreatiVe.All Rights Reserved
+          </Typography>
         </footer>
       </ThemeProvider>
     </div>

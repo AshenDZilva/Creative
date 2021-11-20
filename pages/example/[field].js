@@ -5,15 +5,7 @@ import Layout from '../../components/Layout';
 import axios from 'axios';
 import { Store } from '../../utils/Store';
 
-import {
-  Grid,
-  Link,
-  List,
-  Typography,
-  ListItem,
-  Card,
-  Button,
-} from '@material-ui/core';
+import { Link, Typography, Button } from '@material-ui/core';
 import useStyles from '../../utils/styles';
 import db from '../../utils/db';
 import Example from '../../models/Example';
@@ -48,7 +40,7 @@ export default function ExampleScreen(props) {
     <Link
       underline="hover"
       key="2"
-      color="inherit"
+      color="primary"
       href="/example"
       onClick={handleClick}
     >
@@ -63,15 +55,14 @@ export default function ExampleScreen(props) {
 
   return (
     <Layout title={example.name}>
+      <div className={classes.section}>
+        <NextLink href="/example" passHref>
+          <Link>
+            <Typography>Back to Resume Examples</Typography>
+          </Link>
+        </NextLink>
+      </div>
       <div align="center">
-        <div className={classes.section}>
-          <Stack spacing={2}>
-            <Breadcrumbs separator="›" aria-label="field name">
-              {breadcrumbs}
-            </Breadcrumbs>
-          </Stack>
-        </div>
-
         <h1 component="h2" variant="h2">
           {example.name} Resume Example{' '}
         </h1>
@@ -80,12 +71,26 @@ export default function ExampleScreen(props) {
         </p>
       </div>
       <div align="center">
-        <Image
-          src={example.image}
-          alt={example.name}
-          width={800}
-          height={1100}
-        ></Image>
+        <div>
+          <Image
+            src={example.image}
+            alt={example.name}
+            width={800}
+            height={1100}
+          ></Image>
+        </div>
+        <div>
+          <a
+            href="/files/Civil Engineer.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            download
+          >
+            <Button variant="contained" color="primary">
+              Download File
+            </Button>
+          </a>
+        </div>
       </div>
     </Layout>
   );

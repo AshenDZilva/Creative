@@ -18,6 +18,7 @@ import useStyles from '../../utils/styles';
 import db from '../../utils/db';
 import Product from '../../models/Product';
 import { useRouter } from 'next/router';
+import Rating from '@mui/material/Rating';
 
 export default function ProductScreen(props) {
   const router = useRouter();
@@ -30,10 +31,7 @@ export default function ProductScreen(props) {
 
   const addToMyPlanHandler = async () => {
     const { data } = await axios.get(`/api/products/${product._id}`);
-    if (data.countInStock <= 0) {
-      window.alert('Sorry. Product is out of stock');
-      return;
-    }
+
     dispatch({ type: 'MYPLAN_ADD_ITEM', payload: { ...product, quantity: 1 } });
     router.push('/myplan');
   };
@@ -67,7 +65,14 @@ export default function ProductScreen(props) {
             </ListItem>
             <ListItem>
               <Typography>
-                Ratings : {product.rating} ({product.numReviews}) reviwes
+                Ratings :{' '}
+                <Rating
+                  name="half-rating-read"
+                  defaultValue={product.rating}
+                  precision={0.5}
+                  readOnly
+                />
+                ({product.numReviews}) reviwes
               </Typography>
             </ListItem>
             <ListItem>

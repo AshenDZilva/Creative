@@ -8,7 +8,6 @@ const useStyles = makeStyles({
       marginLeft: 10,
     },
   },
-
   grow: {
     flexGrow: 1,
   },
@@ -22,9 +21,15 @@ const useStyles = makeStyles({
     minHeight: '80vh',
   },
 
-  footer: {
+  helps: {
     marginTop: 20,
+  },
+
+  footer: {
+    marginTop: 40,
     textAlign: 'center',
+    paddingTop: 20,
+    backgroundColor: '#006699',
   },
 
   section: {
@@ -36,12 +41,21 @@ const useStyles = makeStyles({
     paddingTop: 50,
     fontSize: '2.5rem',
     fontFamily: 'Roboto Mono',
+    textAlign: 'center',
+  },
+
+  para: {
+    paddingTop: 20,
+    fontSize: '1.3rem',
+    fontFamily: 'Roboto Mono',
+    textAlign: 'center',
   },
 
   button: {
     width: '100%',
     maxWidth: 200,
     margin: '0 auto',
+    textAlign: 'center',
   },
 
   form: {
@@ -84,7 +98,6 @@ const useStyles = makeStyles({
   cato: {
     width: '100%',
     backgroundColor: '#006699',
-
     color: '#ffffff',
   },
 });
