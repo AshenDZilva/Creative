@@ -106,8 +106,8 @@ export default function Home() {
                 </ListItem>
                 <ListItem>
                   <Typography>
-                    <DoneIcon /> Professional resume templates with basic,
-                    modern, and creative styles
+                    <DoneIcon />
+                    The ability to download your resume for free in minutes
                   </Typography>
                 </ListItem>
                 <ListItem>
@@ -122,8 +122,8 @@ export default function Home() {
                 </ListItem>
                 <ListItem>
                   <Typography>
-                    <DoneIcon /> The ability to download your resume for free in
-                    minutes
+                    <DoneIcon /> Professional resume templates with basic,
+                    modern, and creative styles
                   </Typography>
                 </ListItem>
                 <ListItem>
